@@ -44,7 +44,8 @@ func (r *Repo) GetActivity() ([]model.Activity, error) {
 	}
 	defer rows.Close()
 
-	var acts []model.Activity
+//	var acts []model.Activity
+        acts := make([]model.Activity, 0)
 	for rows.Next() {
 		var a model.Activity
 		rows.Scan(&a.ID, &a.EquipmentID, &a.Action, &a.Time)
